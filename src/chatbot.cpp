@@ -71,6 +71,8 @@ ChatBot::ChatBot(ChatBot&& source)
     source._currentNode = nullptr;
     source._chatLogic = nullptr;
     source._rootNode = nullptr;
+
+    _chatLogic->SetChatbotHandle(this);
 }
 
 ChatBot& ChatBot::operator=(const ChatBot& source)
@@ -113,6 +115,8 @@ ChatBot& ChatBot::operator=(ChatBot&& source)
     source._currentNode = nullptr;
     source._chatLogic = nullptr;
     source._rootNode = nullptr;
+
+    _chatLogic->SetChatbotHandle(this);
 
     return *this;
 }
